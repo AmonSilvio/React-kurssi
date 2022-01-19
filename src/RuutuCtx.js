@@ -9,12 +9,14 @@ const Pelitila = {
     PELI_OHI: 'PELI_OHI'
 }
 
+//dispatch({type:Pelitila.RUUTU_VALITTU,data: props.ruuduntila.paikka})
+
 export function Ruutu(props){
     const globalState = useContext(store);
-    const { dispatch, state } = globalState;
+  /*   const { dispatch, state } = globalState; */
 
     return(
-        <button className="peliruutu" onClick={()=>dispatch({type:Pelitila.RUUTU_VALITTU,data: props.ruuduntila.paikka})}>
+        <button className="peliruutu" onClick={()=>props.ruutuValittu(props.ruuduntila.paikka)}>
            {props.ruuduntila.nappula}
         </button>
     );
